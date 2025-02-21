@@ -1,0 +1,15 @@
+The following CSS rule unintentionally targets the `::before` pseudo-element of all elements, resulting in unexpected styling: 
+
+```css
+::before { 
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+```
+
+This is problematic because it applies a red background to all elements that have a `::before` pseudo-element, even if they are not intended to have this specific style. It also causes problems with other absolute elements that may be placed on top of the red background.
