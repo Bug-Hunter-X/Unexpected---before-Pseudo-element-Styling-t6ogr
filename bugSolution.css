@@ -1,0 +1,29 @@
+To fix this, the CSS rule needs to be more specific.  Target the specific element(s) where you want this style.  For example, if only the `<article>` element should have this effect: 
+
+```css
+article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+```
+
+If you need to target multiple elements or want to use a more flexible approach, consider using a class: 
+
+```css
+.my-element::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+```
+
+Then add the class `my-element` to any elements you want to style with the `::before` pseudo-element.
